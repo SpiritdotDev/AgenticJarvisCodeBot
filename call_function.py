@@ -39,7 +39,7 @@ def call_function(function_call, verbose=False):
     #creates a shallow copy of the args so that we can modify one argument to ensure working directory is set properly
     args = dict(function_call.args) if function_call.args else {}
     #overwrites the working directory to make sure the LLM doesn't escape into other directories
-    args["working_directory"] = "./calculator"
+    args["working_directory"] = "./Playground"
 
     #time to call the function
     function_result = function_map[function_name](**args)
