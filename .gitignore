@@ -6,6 +6,9 @@ dist/
 wheels/
 *.egg-info
 
+#Jarvis's playground on my local machine where i test his capabilities and fiddle with his personality
+/Playground
+
 # Virtual environments
 .venv
 
