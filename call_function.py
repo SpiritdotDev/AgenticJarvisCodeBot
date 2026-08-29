@@ -3,10 +3,10 @@ from google.genai import types
 from functions.get_files_info import schema_get_files_info, get_files_info
 from functions.get_file_contents import schema_get_file_content,get_file_content
 from functions.write_file import schema_write_file,write_file
-from functions.run_python_file import schema_run_python_file,run_python_file
+from functions.run_command import schema_run_command,run_command
 
 available_functions = types.Tool(
-    function_declarations=[schema_get_files_info,schema_get_file_content,schema_write_file,schema_run_python_file],
+    function_declarations=[schema_get_files_info,schema_get_file_content,schema_write_file,schema_run_command],
 )
 
 PLAYGROUND_DIR = Path.home() / "jarvis_playground"
@@ -24,7 +24,7 @@ def call_function(function_call, verbose=False):
         "get_file_content": get_file_content,
         "write_file": write_file,
         "get_files_info": get_files_info,
-        "run_python_file": run_python_file
+        "run_command": run_command
     }
 
     function_name = function_call.name or ""
