@@ -31,6 +31,8 @@ def main():
     print("Hello sir.")
     print("Type 'exit' to quit.")
 
+    messages = []
+
     while True:
         user_input = input(">>> ").strip()
         if user_input.lower() == "exit":
@@ -41,12 +43,12 @@ def main():
         if not user_input:
             continue
 
-        # Initialize conversation messages for this turn
-        messages = [
+        # add the conversation history to the messages list
+        messages.append(
             types.Content(
                 role="user", parts=[types.Part.from_text(text=user_input)]
             )
-        ]
+        )
 
         steps = 0
         while steps < MAX_STEPS:
