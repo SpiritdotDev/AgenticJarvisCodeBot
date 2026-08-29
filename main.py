@@ -34,7 +34,8 @@ def main():
     while True:
         user_input = input(">>> ").strip()
         if user_input.lower() == "exit":
-            print("Exiting REPL.")
+            print("Powering down.")
+            print(JARVIS_BANNER)
             break
 
         if not user_input:
