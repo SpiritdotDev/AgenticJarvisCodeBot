@@ -6,6 +6,14 @@ from google.genai import types
 from prompts import system_prompt
 from call_function import available_functions,call_function
 
+JARVIS_BANNER = r"""
+       __ ___     ____  _    __ _____ _____
+      / //   |   / __ \| |  / //_  _// ___/
+ __  / // /| |  / /_/ /| | / /  / /  \__ \ 
+/ /_/ // ___ | / _, _/ | |/ / _/ /  ___/ / 
+\____//_/  |_|/_/ |_|  |___/ /___/ /____/  
+"""
+
 env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=env_path)
 api_key = os.environ.get("GEMINI_API_KEY")
@@ -19,6 +27,7 @@ MAX_STEPS = 10
 
 
 def main():
+    print(JARVIS_BANNER)
     print("Hello sir.")
     print("Type 'exit' to quit.")
 
